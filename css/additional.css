@@ -1,0 +1,33 @@
+/* Addititonal CSS to bootstrap*/
+
+/*Fixing problem of nav bar being over content*/
+body { 
+    padding-top: 65px; 
+}
+
+/*For fixed width navbar with fixed postion (navbar-fixed-top class)*/
+/*@media all and (min-width: 768px) {
+  .navbar-fixed-width {
+    width: 768px;
+    margin-left: auto;
+    margin-right:auto;
+ }
+}*/
+
+/*@media all and (min-width: 992px) {
+  .navbar-fixed-width {
+    width: 992px;
+    margin-left: auto;
+    margin-right:auto;
+  }
+
+}
+
+@media all and (min-width: 1200px) {
+  .navbar-fixed-width {
+    width: 1200px;
+    margin-left: auto;
+    margin-right:auto;
+  }
+}*/
+Ò
