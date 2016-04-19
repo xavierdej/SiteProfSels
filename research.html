@@ -19,6 +19,7 @@
 
     <!-- Custom CSS -->
     <link href="css/additional.css" rel="stylesheet">
+	<link href="css/sidebar.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -31,10 +32,16 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+	
+	 <style>
+	body {
+      position: relative;
+	}
+	</style>
 
 </head>
 
-<body>
+<body data-spy="scroll" data-target="#myScrollspy">
     <!-- Navbar -->
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
@@ -62,9 +69,90 @@
     </nav>
 
     <!-- Content -->
-    <div class="container">
-		Hier dacht ik aan een verticale navbar die met je meescrolt met de titels van de onderwerpen, en de verschillende onderwerpen onder elkaar. Andere mogelijkheid: soort van tabbladen die je kan openen; dus een horizontale navbar vanboven
+
+<div class="container">
+  <div class="row">
+    <nav class="col-sm-3" id="myScrollspy">
+      <ul class="nav nav-pills nav-stacked" data-spy="affix">
+        <li><a href="#section1">Section 1</a></li>
+        <li><a href="#section2">Section 2</a></li>
+        <li><a href="#section3">Section 3</a></li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Section 4 <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#section41">Section 4-1</a></li>
+            <li><a href="#section42">Section 4-2</a></li>                     
+          </ul>
+        </li>
+      </ul>
+    </nav>
+    <div class="col-sm-9">
+      <div id="section1">    
+        <h1>Section 1</h1>
+        <p>Try to scroll this section and look at the navigation list while scrolling!</p>
+        <p>Try to scroll this section and look at the navigation list while scrolling!</p>
+        <p>Try to scroll this section and look at the navigation list while scrolling!</p>
+        <p>Try to scroll this section and look at the navigation list while scrolling!</p>
+        <p>Try to scroll this section and look at the navigation list while scrolling!</p>
+        <p>Try to scroll this section and look at the navigation list while scrolling!</p>
+        <p>Try to scroll this section and look at the navigation list while scrolling!</p>
+        <p>Try to scroll this section and look at the navigation list while scrolling!</p>
+      </div>
+      <div id="section2"> 
+        <h1>Section 2</h1>
+        <p>Try to scroll this section and look at the navigation list while scrolling!</p>
+        <p>Try to scroll this section and look at the navigation list while scrolling!</p>
+        <p>Try to scroll this section and look at the navigation list while scrolling!</p>
+        <p>Try to scroll this section and look at the navigation list while scrolling!</p>
+        <p>Try to scroll this section and look at the navigation list while scrolling!</p>
+        <p>Try to scroll this section and look at the navigation list while scrolling!</p>
+        <p>Try to scroll this section and look at the navigation list while scrolling!</p>
+        <p>Try to scroll this section and look at the navigation list while scrolling!</p>
+        <p>Try to scroll this section and look at the navigation list while scrolling!</p>
+      </div>        
+      <div id="section3">         
+        <h1>Section 3</h1>
+        <p>Try to scroll this section and look at the navigation list while scrolling!</p>
+        <p>Try to scroll this section and look at the navigation list while scrolling!</p>
+        <p>Try to scroll this section and look at the navigation list while scrolling!</p>
+        <p>Try to scroll this section and look at the navigation list while scrolling!</p>
+        <p>Try to scroll this section and look at the navigation list while scrolling!</p>
+        <p>Try to scroll this section and look at the navigation list while scrolling!</p>
+        <p>Try to scroll this section and look at the navigation list while scrolling!</p>
+        <p>Try to scroll this section and look at the navigation list while scrolling!</p>
+        <p>Try to scroll this section and look at the navigation list while scrolling!</p>
+        <p>Try to scroll this section and look at the navigation list while scrolling!</p>
+      </div>
+      <div id="section41">         
+        <h1>Section 4-1</h1>
+        <p>Try to scroll this section and look at the navigation list while scrolling!</p>
+        <p>Try to scroll this section and look at the navigation list while scrolling!</p>
+        <p>Try to scroll this section and look at the navigation list while scrolling!</p>
+        <p>Try to scroll this section and look at the navigation list while scrolling!</p>
+        <p>Try to scroll this section and look at the navigation list while scrolling!</p>
+        <p>Try to scroll this section and look at the navigation list while scrolling!</p>
+        <p>Try to scroll this section and look at the navigation list while scrolling!</p>
+        <p>Try to scroll this section and look at the navigation list while scrolling!</p>
+        <p>Try to scroll this section and look at the navigation list while scrolling!</p>
+        <p>Try to scroll this section and look at the navigation list while scrolling!</p>
+      </div>      
+      <div id="section42">         
+        <h1>Section 4-2</h1>
+        <p>Try to scroll this section and look at the navigation list while scrolling!</p>
+        <p>Try to scroll this section and look at the navigation list while scrolling!</p>
+        <p>Try to scroll this section and look at the navigation list while scrolling!</p>
+        <p>Try to scroll this section and look at the navigation list while scrolling!</p>
+        <p>Try to scroll this section and look at the navigation list while scrolling!</p>
+        <p>Try to scroll this section and look at the navigation list while scrolling!</p>
+        <p>Try to scroll this section and look at the navigation list while scrolling!</p>
+        <p>Try to scroll this section and look at the navigation list while scrolling!</p>
+        <p>Try to scroll this section and look at the navigation list while scrolling!</p>
+        <p>Try to scroll this section and look at the navigation list while scrolling!</p>
+      </div>
     </div>
+  </div>
+</div>
+
     <div class="container">
         <div class="row">
             <div class="well well-lg">
@@ -94,6 +182,11 @@
 
     <!-- Plugin JavaScript -->
     <script src="js/jquery.easing.min.js"></script>
+
+	<!-- Additional javascript (scrollspy) -->
+	<script src="js/profSels.js"></script>
+	
+	<!-- 
 
     <!-- Google Maps API Key - Use your own API key to enable the map feature. More information on the Google Maps API can be found at https://developers.google.com/maps/ -->
     <!-- // <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRngKslUGJTlibkQ3FkfTxj3Xss1UlZDA&sensor=false"></script> -->
