@@ -3,7 +3,7 @@
 <?php include "navbar.php" ?>
 <body>
     <?php 
-    generateNavbar("profSels");
+    generateNavbar("contact");
      ?>
     <!-- Content -->
     <div class="container">

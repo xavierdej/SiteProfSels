@@ -3,7 +3,7 @@
 <?php include "navbar.php" ?>
 <body>
     <?php 
-    generateNavbar("index");
+    generateNavbar("research");
      ?>
 
     <!-- Content -->
