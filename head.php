@@ -21,7 +21,8 @@ echo '
 
     <!-- Custom CSS -->
     <link href="css/additional.css" rel="stylesheet">
-
+    <link href="css/card-reveal.css" rel="stylesheet">
+    
     <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
