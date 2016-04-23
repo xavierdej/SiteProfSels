@@ -1,6 +1,8 @@
 <?php
     session_start();
-
+    $message = "";
+    if($_SESSION['loggedIn']==1)
+        $_SESSION['loggedIn']=0;
     if(isset($_POST['login'])) {
         include "database.php";
         $database = new Database();
@@ -25,9 +27,11 @@
         if($password == $db_password) {
             $_SESSION['username'] = $username;
             $_SESSION['id'] = $id;
-            header("Location: index.html");
+            $_SESSION['loggedIn'] = 1;
+            header("Location: index.php");
         } else {
-            echo "You didn't enter the correct details!";
+            $message = '<div class="alert alert-danger">Maybe you typed the wrong username or password!</div>';
+            $_SESSION['loggedIn'] = 0;
         }
 
     }
@@ -39,11 +43,30 @@
     <?php 
     generateNavbar("login");
      ?>
-    <h1 style="font-family: Tahoma;">Login</h1>
+<!--     <h1 style="font-family: Tahoma;">Login</h1>
     <form action="login.php" method="post" enctype="multipart/form-data">
         <input placeholder="Username" name="username" type="text" autofocus>
         <input placeholder="Password" name="password" type="password">
         <input name="login" type="submit" value="Login">
-    </form>
-</body>
-</html>
+    </form> -->
+    <div class="container">
+        <div class="row">
+            <?php echo $message; ?>
+            <div class="col-lg-4 col-lg-offset-4">
+                <div class="well well-lg">
+                <form action "login.php" method="post" encdata="multipart/form-data">
+                  <div class="form-group">
+                    <label for="username">Username</label>
+                    <input name="username" type="text" class="form-control" id="username" placeholder="Username" autofocus>
+                  </div>
+                  <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" name="password"class="form-control" id="password" placeholder="Password">
+                  </div>
+                  <button name="login" type="submit" class="btn btn-default" value="Login">Login</button>
+                </form>
+                </div>
+            </div>
+        </div>
+    </div>
+<?php include_once "tail.php" ?>

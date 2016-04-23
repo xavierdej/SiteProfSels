@@ -38,7 +38,15 @@ function generateNavbar($activeTab)
                     <ul class="nav navbar-nav navbar-right">
                         <li ';
                         echo ($activeTab=="login"?'class="active"':"");
-                        echo ' ><a href="login.php">Login</a></li>
+                        if ($_SESSION['loggedIn'] == 1)
+                        {
+                            echo ' ><a href="login.php">Logout</a></li>';
+                        }
+                        else
+                        {
+                            echo ' ><a href="login.php">Login</a></li>';
+                        }
+                        echo '
                     </ul>
                 </div>
             </div>
