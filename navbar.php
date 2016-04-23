@@ -34,6 +34,8 @@ function generateNavbar($activeTab)
                         <li ';
                         echo ($activeTab=="profSels"?'class="active"':"");
                         echo ' ><a href="profSels.php">Prof. Sels</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
                         <li ';
                         echo ($activeTab=="login"?'class="active"':"");
                         echo ' ><a href="login.php">Login</a></li>
