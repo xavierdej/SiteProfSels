@@ -2,6 +2,15 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
+// Converts query result to array of result rows
+function resultToArray($result) {
+    $rows = array();
+    while($row = $result->fetch_assoc()) {
+        $rows[] = $row;
+    }
+    return $rows;
+}
+
 class Database
 {
     const INI_FILE = "config_db.ini";
