@@ -1,7 +1,6 @@
-<?php
-    session_start();
+<?php session_start(); 
     $message = "";
-    if($_SESSION['loggedIn']==1)
+    if(isset($_SESSION['loggedIn']) && $_SESSION['loggedIn']==1)
         $_SESSION['loggedIn']=0;
     if(isset($_POST['login'])) {
         include "database.php";
@@ -37,18 +36,20 @@
     }
 ?>
 
-<?php include_once "head.php" ?>
-<?php include "navbar.php" ?>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<?php include_once 'head.php'; ?>
+<?php include "navbar.php"; ?>
+</head>
+
 <body>
-    <?php 
-    generateNavbar("login");
-     ?>
-<!--     <h1 style="font-family: Tahoma;">Login</h1>
-    <form action="login.php" method="post" enctype="multipart/form-data">
-        <input placeholder="Username" name="username" type="text" autofocus>
-        <input placeholder="Password" name="password" type="password">
-        <input name="login" type="submit" value="Login">
-    </form> -->
+    <!-- Navbar -->
+<?php generateNavbar('login'); ?>
+
+    <!-- Content -->
+
     <div class="container">
         <div class="row">
             <?php echo $message; ?>
@@ -69,4 +70,8 @@
             </div>
         </div>
     </div>
-<?php include_once "tail.php" ?>
+
+<?php include_once 'footer.php' ?>
+<?php include_once 'jsinc.php' ?>
+</body>
+</html>
