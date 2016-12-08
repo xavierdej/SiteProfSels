@@ -46,3 +46,7 @@ Thumbs.db
 *.fls
 *.fdb_latexmk
 *.toc
+
+# other #
+#########
+sftp-config.json
