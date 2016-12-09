@@ -1,13 +1,16 @@
-<?php session_start() ?>
-<?php include_once "head.php" ?>
-<?php include "navbar.php" ?>
+<?php session_start(); ?>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<?php include_once 'head.php'; ?>
+</head>
+
 <body>
-    <?php 
-    generateNavbar("research");
-     ?>
+    <!-- Navbar -->
+<?php include "navbar.php"; ?>
 
     <!-- Content -->
-
 <div class="container">
     <?php
         if ($_SESSION['loggedIn'] == 1)
@@ -23,13 +26,12 @@
           <a class="dropdown-toggle" data-toggle="dropdown" href="#">Section 4 <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="#section41">Section 4-1</a></li>
-            <li><a href="#section42">Section 4-2</a></li>                     
-          </ul>
+            <li><a href="#section42">Section 4-2</a></li>
         </li>
       </ul>
     </nav>
     <div class="col-sm-9">
-      <div id="section1">    
+      <div id="section1">
         <h1>Section 1</h1>
         <p>Try to scroll this section and look at the navigation list while scrolling!</p>
         <p>Try to scroll this section and look at the navigation list while scrolling!</p>
@@ -40,7 +42,7 @@
         <p>Try to scroll this section and look at the navigation list while scrolling!</p>
         <p>Try to scroll this section and look at the navigation list while scrolling!</p>
       </div>
-      <div id="section2"> 
+      <div id="section2">
         <h1>Section 2</h1>
         <p>Try to scroll this section and look at the navigation list while scrolling!</p>
         <p>Try to scroll this section and look at the navigation list while scrolling!</p>
@@ -51,8 +53,8 @@
         <p>Try to scroll this section and look at the navigation list while scrolling!</p>
         <p>Try to scroll this section and look at the navigation list while scrolling!</p>
         <p>Try to scroll this section and look at the navigation list while scrolling!</p>
-      </div>        
-      <div id="section3">         
+      </div>
+      <div id="section3">
         <h1>Section 3</h1>
         <p>Try to scroll this section and look at the navigation list while scrolling!</p>
         <p>Try to scroll this section and look at the navigation list while scrolling!</p>
@@ -65,7 +67,7 @@
         <p>Try to scroll this section and look at the navigation list while scrolling!</p>
         <p>Try to scroll this section and look at the navigation list while scrolling!</p>
       </div>
-      <div id="section41">         
+      <div id="section41">
         <h1>Section 4-1</h1>
         <p>Try to scroll this section and look at the navigation list while scrolling!</p>
         <p>Try to scroll this section and look at the navigation list while scrolling!</p>
@@ -77,8 +79,8 @@
         <p>Try to scroll this section and look at the navigation list while scrolling!</p>
         <p>Try to scroll this section and look at the navigation list while scrolling!</p>
         <p>Try to scroll this section and look at the navigation list while scrolling!</p>
-      </div>      
-      <div id="section42">         
+      </div>
+      <div id="section42">
         <h1>Section 4-2</h1>
         <p>Try to scroll this section and look at the navigation list while scrolling!</p>
         <p>Try to scroll this section and look at the navigation list while scrolling!</p>
@@ -94,4 +96,12 @@
     </div>
   </div>
 </div>
-<?php include_once "tail.php" ?>
+
+<?php include_once 'footer.php' ?>
+<?php include_once 'jsinc.php' ?>
+<script>
+  $('#navbar-research').addClass("active");
+  $('#navbar-research a').attr("href","#");
+</script>
+</body>
+</html>

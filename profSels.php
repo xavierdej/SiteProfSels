@@ -1,10 +1,15 @@
-<?php session_start() ?>
-<?php include_once "head.php" ?>
-<?php include "navbar.php" ?>
+<?php session_start(); ?>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<?php include_once 'head.php'; ?>
+</head>
+
 <body>
-    <?php 
-    generateNavbar("profSels");
-     ?>
+    <!-- Navbar -->
+<?php include "navbar.php"; ?>
+
     <!-- Content -->
     <div class="container">
         <?php
@@ -31,9 +36,17 @@
                     <a href="http://googlemapsinterface.kuleuven.be/index.cgi?nbol=50.86364142080709,4.68701813890891&amp;zoomlevel=14&amp;plaatsnaam=Centr.+vr+Oppervlaktechemie+%26+Katalyse%2C+Kasteelpark+Arenberg+23%2C+3001+Leuven">Google map</a><br>
                     Centre for Surface Chemistry and Catalysis <br>
                     Kasteelpark Arenberg 23 - box 2461 <br>
-                    3001 Leuven 
+                    3001 Leuven
                 </address>
             </div>
         </div>
     </div>
-<?php include_once "tail.php" ?>
+
+<?php include_once 'footer.php' ?>
+<?php include_once 'jsinc.php' ?>
+<script>
+    $('#navbar-profSels').addClass("active");
+    $('#navbar-profSels a').attr("href","#");
+</script>
+</body>
+</html>

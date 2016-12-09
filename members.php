@@ -4,16 +4,14 @@
 
 <head>
 <?php include_once 'head.php'; ?>
-<?php include "navbar.php"; ?>
 </head>
 
 <body>
     <!-- Navbar -->
-<?php generateNavbar('members'); ?>
+<?php include "navbar.php"; ?>
 
     <!-- Content -->
-    
-    <?php 
+    <?php
     include "database.php";
     $database = new Database();
     $db = $database->getDbConnection();
@@ -39,32 +37,32 @@
          ?>
         <div class="row">
             <?php
-            foreach ($rows as $row) 
+            foreach ($rows as $row)
             {
                 if (isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] == 1)
-				{
-                	$echoForm = 
-	                	'<form action="manageMembers.php" method="post">
-			                <input type="hidden" name="intention" value="editMember">
-			                <input type="hidden" name="memberID" value="'.$row['ID'].'">
-			                <button type="submit" class="btn btn-default">Edit member</button>
-			            </form>';
+                {
+                    $echoForm =
+                        '<form action="manageMembers.php" method="post">
+                            <input type="hidden" name="intention" value="editMember">
+                            <input type="hidden" name="memberID" value="'.$row['ID'].'">
+                            <button type="submit" class="btn btn-default">Edit member</button>
+                        </form>';
                 }
                 else
                 {
-                	$echoForm = "";
+                    $echoForm = "";
                 }
                 echo '
                 <div class="col-lg-3 col-md-4 col-sm-6 col-xs-10">
                     <div class="card">
                         <div class="card-image">
-                            <img class="img-responsive" src="'.$row['PicturePath'].'">   
+                            <img class="img-responsive" src="'.$row['PicturePath'].'">
                         </div><!-- card image -->
 
                         <div class="card-content">
-                        	'.$echoForm.'
+                            '.$echoForm.'
                             <h4 class="card-title">'.$row['FirstName'].' '.$row['LastName'].'</h4>
-                            <div class="row">    
+                            <div class="row">
                                 <div class="col-md-6">
                                     <a  href="javascript:void(0)" class="btn-show" data-rel="'.$row['ID'].'">READ MORE</a>
                                 </div>
@@ -89,11 +87,15 @@
                 </div>';
             }
              ?>
-        </div>      
+        </div>
     </div>
     <div class="col-xs-12" style="height:30px;"></div>
 
 <?php include_once 'footer.php' ?>
 <?php include_once 'jsinc.php' ?>
+<script>
+    $('#navbar-members').addClass("active");
+    $('#navbar-members a').attr("href","#");
+</script>
 </body>
 </html>
